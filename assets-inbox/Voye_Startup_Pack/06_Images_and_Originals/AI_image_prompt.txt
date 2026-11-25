@@ -1,0 +1,15 @@
+Create a set of simple, ultra-minimalist line illustrations for a small Namibian printing, stationery and custom gifts brand website. Each image has one or two elements only, drawn as clean, uniform-weight single-line vector art with rounded line caps and no fills, shading, gradients, text or backgrounds. Use only these colours on a transparent or flat cream (#F6F2EA) background: deep teal (#0E3B4A), mid teal (#2E7D86), soft aqua (#A8D5D1) and warm gold (#F0C654), with gold used as the single accent. Lots of empty space around the subject, centred composition, square format 2000x2000px. Style should be calm, warm, handmade and premium, matching a sunburst-and-ripple logo.
+
+Generate these as a consistent series, each as a separate image:
+1. A bound book with a small gold sunburst above it
+2. A pen and a blank card
+3. A gift box with a ribbon
+4. A t-shirt outline with a small gold star
+5. A business card stack with a gold edge
+6. A spiral notebook with a pencil
+7. A tote bag with a gold dot
+8. A single wavy ripple line (a divider)
+9. A sun rising over a gentle dune line
+10. A shell with one gold ring or dot
+
+Keep line weight, corner style and colour usage identical across all images so they read as one family. Avoid people, photography, realism, extra decorative details and any text.
