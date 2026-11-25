@@ -81,9 +81,14 @@ jobs:
           if not meta:
               sys.exit("could not list contents")
 
-          children = meta["data"].get("children") or meta["data"].get("contents") or {}
-          files = list(children.values()) if isinstance(children, dict) else list(children)
-          files = [c for c in files if c.get("type") != "folder"]
+          d = meta["data"]
+          print("data keys:", sorted(d.keys()), "type:", d.get("type"), "name:", d.get("name"))
+          if d.get("type") == "file" or d.get("link"):
+              files = [d]
+          else:
+              children = d.get("children") or d.get("contents") or {}
+              files = list(children.values()) if isinstance(children, dict) else list(children)
+              files = [c for c in files if c.get("type") != "folder"]
           print(json.dumps([{k: c.get(k) for k in ("name", "type", "size", "link")} for c in files], indent=2))
           if not files:
               sys.exit("no files in share")
