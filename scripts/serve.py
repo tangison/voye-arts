@@ -11,7 +11,7 @@ import http.server
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HIDDEN_TOP_LEVEL = {"assets-inbox", "scripts"}
+HIDDEN_TOP_LEVEL = {"assets-inbox", "scripts", "scrollcraft"}
 
 
 class SiteHandler(http.server.SimpleHTTPRequestHandler):
