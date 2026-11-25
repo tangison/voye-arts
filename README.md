@@ -6,6 +6,9 @@ custom, handmade stationery, books and binding, cards and gifts.
 
 ## Run it
 
+**Live site:** https://tangison.github.io/voye-arts/ (GitHub Pages,
+deployed from `main`).
+
 The site is plain HTML, CSS and a few lines of JavaScript. No build step.
 
 ```bash
