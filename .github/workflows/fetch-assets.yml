@@ -1,0 +1,53 @@
+name: Fetch asset pack
+
+on:
+  push:
+    paths:
+      - ".github/workflows/fetch-assets.yml"
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Download pack from gofile
+        run: |
+          set -euo pipefail
+          TOKEN=$(curl -sS -X POST "https://api.gofile.io/accounts" -H "Content-Type: application/json" -d '{}' | jq -r '.data.token')
+          if [ -z "$TOKEN" ] || [ "$TOKEN" = "null" ]; then echo "guest account failed"; exit 1; fi
+          WT=$(curl -sS "https://gofile.io/dist/js/global.js" | grep -oE 'wt[[:space:]]*[:=][[:space:]]*"[A-Za-z0-9]+"' | head -1 | sed -E 's/.*"([A-Za-z0-9]+)".*/\1/' || true)
+          if [ -z "$WT" ]; then WT="4fd6sg89d7s6"; fi
+          echo "using wt=$WT"
+          META=$(curl -sS "https://api.gofile.io/contents/aDTFEWDi?wt=$WT" -H "Authorization: Bearer $TOKEN")
+          echo "$META" | jq '{status, name: .data.name, type: .data.type, children: [.data.children[]? | {name, type, size, link}]}'
+          LINK=$(echo "$META" | jq -r '[.data.children[]? | select(.type=="file")][0].link // empty')
+          NAME=$(echo "$META" | jq -r '[.data.children[]? | select(.type=="file")][0].name // "pack.zip"')
+          if [ -z "$LINK" ]; then echo "no file link found"; exit 1; fi
+          echo "downloading $NAME from $LINK"
+          curl -sSL -H "Cookie: accountToken=$TOKEN" -o "$NAME" "$LINK"
+          ls -la "$NAME"
+          file "$NAME"
+
+      - name: Extract pack
+        run: |
+          set -euo pipefail
+          mkdir -p assets-inbox
+          unzip -o "Voye_Startup_Pack.zip" -d assets-inbox
+          echo "--- file listing ---"
+          find assets-inbox -type f -exec ls -la {} +
+          echo "--- total size ---"
+          du -sh assets-inbox
+
+      - name: Commit assets to branch
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets-inbox
+          git commit -m "Add client asset pack (fetched from gofile)"
+          git push origin HEAD:${{ github.ref_name }}
