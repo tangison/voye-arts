@@ -9,8 +9,8 @@ copy, brand and structure already exist and are preserved.
 
 ## The eight topics
 
-1. **Vibe (authored from brand evidence):** handmade, coastal, warm, personal,
-   unhurried. References: the client's own styled photographs (gift box with a
+1. **Vibe (authored from brand evidence):** personalised, coastal, warm,
+   personal, unhurried. References: the client's own styled photographs (gift box with a
    teal ribbon, leather book with a hand-drawn Namib map), the shell-and-rings
    badge, the Namib sunrise photo. Not sites.
 2. **The journey (evidence: existing page + business profile):** arrive at a
@@ -93,7 +93,7 @@ read how it's made."
 
 ## Authored silence
 
-The margin between "Handmade and checked" and "Delivery or collection" is
+The margin between "Made to your design" and "Delivery or collection" is
 intentional quiet before the ribbon. Verification should not flag it as dead
 scroll.
 
@@ -126,3 +126,16 @@ and states its own bans.
 
 Registry at `scrollcraft/FINGERPRINTS.md` is empty (first build in this
 workspace). Gate passes trivially; row appended after shipping.
+
+## Client revision, 2026-11-25
+
+The client asked to stop focusing on "handmade" and use descriptive wording
+instead (personalised, custom-designed), and to replace the personal Gmail
+with the company address info@voyearts.com. Copy changed accordingly:
+eyebrow "Custom-designed in Swakopmund", facts "Made to order", step 4
+"Made to your design", hero print caption "Custom bound", meta description.
+The Instagram link and structured-data sameAs were removed until the client
+creates the account; they return when it exists. Feeling curve, devices and
+the peak are unchanged: the ribbon still ties around the final step.
+Pending from the client, unhurried: real product photos (planners, calendars,
+gift cards), a fixed physical address, the Instagram handle.
