@@ -137,5 +137,10 @@ eyebrow "Custom-designed in Swakopmund", facts "Made to order", step 4
 The Instagram link and structured-data sameAs were removed until the client
 creates the account; they return when it exists. Feeling curve, devices and
 the peak are unchanged: the ribbon still ties around the final step.
+The client created the Instagram account (@voye_artsdesign) on 2026-11-25;
+the contact link, the step-1 mention and the structured-data sameAs are
+restored. The footer now carries a copyright line asserting the client's
+ownership of the site and its copy.
+
 Pending from the client, unhurried: real product photos (planners, calendars,
-gift cards), a fixed physical address, the Instagram handle.
+gift cards) and a fixed physical address.

@@ -96,9 +96,6 @@ Shown as pending on the stationery, and deliberately not invented on the page:
 
 - CC registration number and tax number (BIPA registration in progress)
 - Banking details
-- Instagram account creation and handle confirmation (printed as
-  `@voye_artsdesign`); the page link and structured-data `sameAs` are removed
-  until the account exists
 - Real product photos (planners, calendars, gift cards) to replace the pack
   photography in the gallery when the client sends them
 - Fixed physical address when the client is back in the country; the footer
